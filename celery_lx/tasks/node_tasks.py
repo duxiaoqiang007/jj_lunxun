@@ -1,10 +1,6 @@
-# from setting.sqlconfig import sql_mes,sql_wechat_sub
 from sqlconfig import sql_mes,sql_wechat_sub
-# from tasks.db_connect import con_oracle,cursor
 from db_connect import con_oracle,con_sql,cursor
-# from tasks.insert_message import insert_message
 from insert_message import insert_message_ctn,insert_message_billno
-# from tasks.get_wechat import get_message_queue,message_sub_dict
 from get_wechat import get_message_queue,message_sub_dict
 import os
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
@@ -104,8 +100,32 @@ def cblg(billno,ctnno):
         insert_message_billno(rows,'c60',billno,wechat_msaage_rows)
 
 # 到上海港
+
 # 进口转关单已获取
+def jkzgd(billno,ctnno):
+    sql = sql_mes(billno,ctnno)
+    str_cblg = sql.sql_zgdhq()
+    oracle_cursor.execute(str_cblg)
+    rows = dict_fetchall(oracle_cursor)
+    if len(rows):
+        wechat_msaage_rows = get_message_queue('j10')
+        insert_message_billno(rows,'j10',billno,wechat_msaage_rows)
+
 # 卸船完工
+def xcwg(billno,ctnno):
+    sql = sql_mes(billno,ctnno)
+    str_count = sql.sql_zgd_count()
+    str_xcwg = sql.sql_xcwg()
+    sql_cursor.execute(str_count)
+    zgd_count = dict_fetchall(sql_cursor)
+    oracle_cursor.execute(str_xcwg)
+    rows = dict_fetchall(oracle_cursor)
+    if len(rows)>0 and len(zgd_count)>0:
+        for row in rows:
+            row['MES_CONTENT'] = row['MES_CONTENT']+','+zgd_count[0]['NUM']
+        wechat_message_rows = get_message_queue('j20')
+        # mes_content内容
+        insert_message_ctn(rows,'j20',billno,wechat_message_rows)
 # 进口核销完成
 # 海关放行
 # 提重计划

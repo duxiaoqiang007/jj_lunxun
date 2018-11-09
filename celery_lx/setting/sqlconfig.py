@@ -58,17 +58,17 @@ class sql_mes():
     # 进口转关单已获取
     # 读取同一提单号下转关单的箱子数量，计划数量
     def sql_zgdhq(self):
-        SQL_ZGDHQ="select * from zl_jkdh where xh='%s' and tdh='%s' and srrq BETWEEN 	dateadd(mi,-15,GETDATE()) AND GETDATE()"%(self.ctnno,self.billno)
+        SQL_ZGDHQ="select distinct tdh as BILLNO,'' as MES_CONTENT from zl_jkdh where tdh='%s' and srrq BETWEEN dateadd(mi,-15,GETDATE()) AND GETDATE()"%(self.billno)
         return SQL_ZGDHQ
-
-    def sql_zgd_count(self):
-        SQL_ZGD_COUNT="select * from zl_jkdh where  tdh='%s' and srrq BETWEEN 	dateadd(mi,-15,GETDATE()) AND GETDATE()"%self.billno
-        return SQL_ZGD_COUNT
 
     # 卸船完工
     # 数数量，实际数量
+    def sql_zgd_count(self):
+        SQL_ZGD_COUNT="select COUNT(*）as NUM from zl_jkdh where  tdh='%s' and srrq BETWEEN 	dateadd(mi,-15,GETDATE()) AND GETDATE()"%self.billno
+        return SQL_ZGD_COUNT
+
     def sql_xcwg(self):
-        SQL_XCWG="select * from PSPRD.ALL_XIANGHUO_BAK_VW WHERE CGD_BILLNO='%s' and iyc_inymode='卸船进场' and iyc_type='在场箱' ORDER BY IYC_INYTM DESC"%self.billno
+        SQL_XCWG="select IYC_CNTRNO as CTNNO,CGD_BILLNO AS BILLNO from PSPRD.ALL_XIANGHUO_BAK_VW WHERE CGD_BILLNO='%s' and iyc_inymode='卸船进场' and iyc_type='在场箱' ORDER BY IYC_INYTM DESC"%self.billno
         return SQL_XCWG
 
     # 进口核销完成
