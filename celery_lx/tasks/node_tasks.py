@@ -80,7 +80,7 @@ def yd(billno,ctnno):
 
 
 # 海关放行
-def hgfx(billno,ctnno):
+def hgfx_out(billno,ctnno):
     sql = sql_mes(billno,ctnno)
     str_hgfx = sql.sql_hgfx_out()
     sql_cursor.execute(str_hgfx)
@@ -126,7 +126,47 @@ def xcwg(billno,ctnno):
         wechat_message_rows = get_message_queue('j20')
         # mes_content内容
         insert_message_ctn(rows,'j20',billno,wechat_message_rows)
+
+
 # 进口核销完成
+def jkhx(billno,ctnno):
+    sql = sql_mes(billno,ctnno)
+    str_jkhx = sql.sql_jkhx()
+    sql_cursor.execute(str_jkhx)
+    rows = dict_fetchall(sql_cursor)
+    if len(rows):
+        wechat_message_rows = get_message_queue('j30')
+        insert_message_billno(rows,'j30',billno,wechat_message_rows)
+
+
 # 海关放行
+def hgfx_in(billno,ctnno):
+    sql = sql_mes(billno,ctnno)
+    str_hgfx = sql.sql_hgfx_out()
+    sql_cursor.execute(str_hgfx)
+    rows = dict_fetchall(sql_cursor)
+    if len(rows):
+        wechat_message_rows = get_message_queue('j40')
+        insert_message_billno(rows,'j40',billno,wechat_message_rows)
+
+
 # 提重计划
+def tzjh(billno,ctnno):
+    sql = sql_mes(billno,ctnno)
+    str_tzjh = sql.sql_tzjh()
+    oracle_cursor.execute(str_tzjh)
+    rows = dict_fetchall(oracle_cursor)
+    if len(rows):
+        wechat_message_rows = get_message_queue('j50')
+        insert_message_billno(rows,'j50',billno,wechat_message_rows)
+
+
 # 提箱出场
+def txcc(billno,ctnno):
+    sql = sql_mes (billno,ctnno)
+    str_txcc = sql.sql_txcc()
+    oracle_cursor.execute(str_txcc)
+    rows = dict_fetchall(oracle_cursor)
+    if len(rows):
+        wechat_msaage_rows = get_message_queue('j60')
+        insert_message_ctn(rows,'j60',billno,wechat_msaage_rows)

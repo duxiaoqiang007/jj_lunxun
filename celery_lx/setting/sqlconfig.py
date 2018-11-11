@@ -73,7 +73,7 @@ class sql_mes():
 
     # 进口核销完成
     def sql_jkhx(self):
-        SQL_JKHX="select jkrq from zl_jkdh where tdh='%s' and xh='%s' and zt='海关回执' "%(self.billno,self.ctnno)
+        SQL_JKHX="select jkrq ,tdh as BILLNO,'' AS MES_CONTENT from zl_jkdh where tdh='%s' and zt='海关回执' "%(self.billno)
         return SQL_JKHX
 
     # 海关放行
@@ -83,10 +83,10 @@ class sql_mes():
 
     # 提重计划
     def sql_tzjh(self):
-        SQL_TZJH="select PSPRD.ALL_PLAN_CONTAINERS_VM.PLANNO from PSPRD.ALL_PLAN_CONTAINERS_VM WHERE billno='%s' and cntrno='%s' AND inymode='提进口重箱'"%(self.billno,self.ctnno)
+        SQL_TZJH="select DISTINCT PSPRD.ALL_PLAN_CONTAINERS_VM.PLANNO as MES_CONTENT , BILLNO from PSPRD.ALL_PLAN_CONTAINERS_VM WHERE billno='%s'  AND inymode='提进口重箱'"%(self.billno,self.ctnno)
         return  SQL_TZJH
 
     # 提箱出场
     def sql_txcc(self):
-        SQL_TXCC="select IYC_OUTTM from PSPRD.ALL_XIANGHUO_BAK_VW where iyc_cntrno='%s' and cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null"%(self.billno,self.ctnno)
+        SQL_TXCC="select IYC_OUTTM,iyc_cntrno as BILLNO,CGD_BILLNO AS BILLNO from PSPRD.ALL_XIANGHUO_BAK_VW where iyc_cntrno='%s' and cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null"%(self.billno,self.ctnno)
         return SQL_TXCC
