@@ -105,9 +105,9 @@ def insert_message_ctn(rows,id, billno, wechat_message_rows ,*args,**kwargs):
                                      'mes_type'] + "','0')"
                     oracle_cursor.execute(insert_sql)
         oracle_con.commit()
-        print('finish')
+        print('finish',id,billno)
     else:
-        print('null')
+        print('null',id)
 
 def insert_message_billno(rows,id, billno, wechat_message_rows ,*args,**kwargs):
     local_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -133,7 +133,7 @@ def insert_message_billno(rows,id, billno, wechat_message_rows ,*args,**kwargs):
                                      'mes_type'] + "','0')"
                     oracle_cursor.execute(insert_sql)
         oracle_con.commit()
-        print('finish')
+        print('finish',id,billno)
     else:
-        print('null')
+        print('null',id)
 

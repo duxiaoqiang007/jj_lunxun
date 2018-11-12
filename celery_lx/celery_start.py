@@ -20,10 +20,19 @@ def start():
     mes_sub_dict = message_sub_dict()
     # 订单号应该由订阅表中读取
     for v in mes_sub_dict:
-        # node_tasks.kxczk(v, '')
-        # node_tasks.ckzxyl(v, '')
-        # node_tasks.zxlw(v,'')
-        # node_tasks.yd(v,'')
-        # node_tasks.hgfx(v,'')
-        node_tasks.cblg(v,'')
+        # node_tasks.kxczk(v)
+        # node_tasks.ckzxyl(v)
+        # node_tasks.zxlw(v)
+        # node_tasks.yd(v)
+        # node_tasks.hgfx_out(v)
+        node_tasks.cblg(v)
+        # node_tasks.jkzgd(v)
+        # # 没有找到合适的数据
+        # node_tasks.xcwg(v)
+        # node_tasks.jkhx(v)
+        # node_tasks.hgfx_in(v)
+        # node_tasks.tzjh(v)
+        # node_tasks.txcc(v)
 start()
+
+

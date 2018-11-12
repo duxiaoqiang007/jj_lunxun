@@ -14,8 +14,8 @@ def dict_fetchall(cursor):
 
 
 # 获取当前wechat_message中相关信息 ,后续用来判断轮询查到的数据是否已经插入
-def get_message_queue(node_id):
-    sql_wechat_mes = sql_wechat_message(node_id)
+def get_message_queue(node_id,billno):
+    sql_wechat_mes = sql_wechat_message(node_id,billno)
     oracle_cursor.execute(sql_wechat_mes)
     message_queue = dict_fetchall(oracle_cursor)
     for v in message_queue:
