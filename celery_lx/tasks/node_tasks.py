@@ -1,7 +1,7 @@
-from sqlconfig import sql_mes,sql_wechat_sub
-from db_connect import con_oracle,con_sql,cursor
-from insert_message import insert_message_ctn,insert_message_billno
-from get_wechat import get_message_queue,message_sub_dict
+from setting.sqlconfig import sql_mes,sql_wechat_sub
+from tasks.db_connect import con_oracle,con_sql,cursor
+from tasks.insert_message import insert_message_ctn,insert_message_billno
+from tasks.get_wechat import get_message_queue
 import os
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 

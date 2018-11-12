@@ -1,6 +1,6 @@
-from db_connect import con_oracle, cursor
+from tasks.db_connect import con_oracle, cursor
 import time
-from get_wechat import message_sub_dict
+from tasks.get_wechat import message_sub_dict
 import datetime
 
 

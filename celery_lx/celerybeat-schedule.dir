@@ -1,4 +1,4 @@
-'entries', (0, 391)
-'__version__', (512, 15)
-'tz', (1024, 4)
-'utc_enabled', (1536, 4)
+'entries', (1536, 429)
+'__version__', (2048, 15)
+'tz', (2560, 4)
+'utc_enabled', (3072, 4)

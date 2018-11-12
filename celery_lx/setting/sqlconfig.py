@@ -1,3 +1,10 @@
+ORACLE_LJ="shdsj/shdsj@192.168.96.3:1521/sjpc"
+# server    数据库服务器名称或IP
+# user      用户名
+# password  密码
+# database  数据库名称
+SQL_LJ = {'server': '192.168.96.10', 'user': 'wechat', 'password': 'wechat2016', 'database': 'pbhan'}
+
 # 查找订阅信息
 def sql_wechat_sub():
     SQL_WECHAT_SUB="select id,open_id,billno from wechat_subscribe where if_finish='0'"
@@ -88,5 +95,5 @@ class sql_mes():
 
     # 提箱出场
     def sql_txcc(self):
-        SQL_TXCC="select IYC_OUTTM,iyc_cntrno as CTNNO,CGD_BILLNO AS BILLNO ,'' AS MES_CONTENT from PSPRD.ALL_XIANGHUO_BAK_VW where  cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null"%(self.billno)
+        SQL_TXCC="select iyc_cntrno as CTNNO,CGD_BILLNO AS BILLNO ,'' AS MES_CONTENT from PSPRD.ALL_XIANGHUO_BAK_VW where  cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null"%(self.billno)
         return SQL_TXCC
