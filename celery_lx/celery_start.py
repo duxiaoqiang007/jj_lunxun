@@ -3,7 +3,7 @@ from celery import Celery
 from tasks import node_tasks
 from tasks.get_wechat import message_sub_dict
 from tasks.db_connect import con_oracle,con_sql,cursor
-
+from celery import Task
 import os
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
@@ -22,23 +22,24 @@ sql_con = con_sql()
 sql_cursor = cursor(sql_con)
 
 
-# class CloseCon(Celery.Task):
-#     if_stop = [0, 0]
-#
-#     def on_succrss(self,retval,task_id,*args,**kwargs):
-#         if self.if_stop == [1, 1]:
-#             oracle_cursor.close()
-#             oracle_con.close()
-#             sql_cursor.close()
-#             sql_con.close()
+class CloseCon(Task):
+    _if_stop = [0, 0]
+
+    def on_succrss(self,retval,task_id,*args,**kwargs):
+        if self.if_stop == [1, 1]:
+            oracle_cursor.close()
+            oracle_con.close()
+            sql_cursor.close()
+            sql_con.close()
+            print('con close!')
 
 
-@app.task()
+@app.task(base = CloseCon)
 def start_out():
     # 获取open_id 和 订阅的提单号字典
     mes_sub_dict = message_sub_dict()
     # # 开始运行时，把成功的参数回调为0
-    # start_out.if_stop[0] = 0
+    start_out._if_stop[0] = 0
     # 订单号应该由订阅表中读取
     for v in mes_sub_dict:
         node_tasks.kxczk(v)
@@ -47,15 +48,15 @@ def start_out():
         node_tasks.yd(v)
         node_tasks.hgfx_out(v)
         node_tasks.cblg(v)
-    # start_out.if_stop[0] = 1
+    start_out._if_stop[0] = 1
 
 
-@app.task()
+@app.task(base = CloseCon)
 def start_in():
     # 获取open_id 和 订阅的提单号字典
     mes_sub_dict = message_sub_dict()
     # # 开始运行时，把成功的参数回调为0
-    # start_in.if_stop[1] = 0
+    start_in._if_stop[1] = 0
     # 订单号应该由订阅表中读取
     for v in mes_sub_dict:
         node_tasks.jkzgd(v)
@@ -65,5 +66,6 @@ def start_in():
         node_tasks.hgfx_in(v)
         node_tasks.tzjh(v)
         node_tasks.txcc(v)
-    # start_in.if_stop[1] = 1
+    start_in._if_stop[1] = 1
 
+start_in()

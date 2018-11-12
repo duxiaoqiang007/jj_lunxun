@@ -81,6 +81,7 @@ dic_mes = {}
 # rows ：SQL执行得到的结果
 # id:哪个步骤的sql语句，对应message_queue
 def insert_message_ctn(rows,id, billno, wechat_message_rows ,*args,**kwargs):
+    dic_mes = {}
     local_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     if len(rows):
         # rows 数据库中查询出来的
@@ -104,12 +105,13 @@ def insert_message_ctn(rows,id, billno, wechat_message_rows ,*args,**kwargs):
                                   mes_content + "','" + message_queue[id][
                                      'mes_type'] + "','0')"
                     oracle_cursor.execute(insert_sql)
-        oracle_con.commit()
-        print('finish',id,billno)
+            oracle_con.commit()
+            print('finish',id,billno)
     else:
         print('null',id)
 
 def insert_message_billno(rows,id, billno, wechat_message_rows ,*args,**kwargs):
+    dic_mes = {}
     local_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     if len(rows):
         # rows 数据库中查询出来的
@@ -132,8 +134,8 @@ def insert_message_billno(rows,id, billno, wechat_message_rows ,*args,**kwargs):
                                   mes_content + "','" + message_queue[id][
                                      'mes_type'] + "','0')"
                     oracle_cursor.execute(insert_sql)
-        oracle_con.commit()
-        print('finish',id,billno)
+            oracle_con.commit()
+            print('finish',id,billno)
     else:
         print('null',id)
 
