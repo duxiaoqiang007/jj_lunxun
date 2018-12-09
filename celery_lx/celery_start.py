@@ -4,6 +4,7 @@ from tasks import node_tasks
 from tasks.get_wechat import message_sub_dict
 from tasks.db_connect import con_oracle,con_sql,cursor
 from celery import Task
+from tasks.wechat_java_api import get_wechat_java
 import os
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
@@ -32,6 +33,8 @@ class CloseCon(Task):
             sql_cursor.close()
             sql_con.close()
             print('con close!')
+#             调用java后台模板消息接口。
+            get_wechat_java()
 
 
 @app.task(base = CloseCon)
@@ -68,4 +71,6 @@ def start_in():
         node_tasks.txcc(v)
     start_in._if_stop[1] = 1
 
-start_in()
+# start_in()
+# start_out()
+get_wechat_java()
