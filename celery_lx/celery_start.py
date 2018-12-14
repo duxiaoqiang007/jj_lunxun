@@ -73,4 +73,4 @@ def start_in():
 
 # start_in()
 # start_out()
-get_wechat_java()
+# get_wechat_java()

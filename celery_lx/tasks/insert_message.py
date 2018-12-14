@@ -107,6 +107,7 @@ def insert_message_ctn(rows,id, billno, wechat_message_rows ,*args,**kwargs):
                     oracle_cursor.execute(insert_sql)
             oracle_con.commit()
             print('finish',id,billno)
+
     else:
         print('null',id)
 
