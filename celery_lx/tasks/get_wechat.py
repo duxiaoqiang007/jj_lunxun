@@ -3,6 +3,7 @@ from tasks.db_connect import con_oracle,cursor
 conn_oracle = con_oracle()
 oracle_cursor = conn_oracle.cursor(conn_oracle)
 
+
 # 把list转为字典
 def dict_fetchall(cursor):
     "Return all rows from a cursor as a dict"

@@ -1,5 +1,6 @@
 # ORACLE_LJ="shdsj/shdsj@192.168.96.3:1521/sjpc"
-ORACLE_LJ="shdsj/shdsj@192.168.96.41:1521/orcl"
+# ORACLE_LJ="shdsj/shdsj@192.168.96.41:1521/orcl"
+ORACLE_LJ="shdsj/shdsj@192.168.96.100:1521/orcl"
 # server    数据库服务器名称或IP
 # user      用户名
 # password  密码
@@ -50,17 +51,17 @@ class sql_mes():
 
     # 运抵
     def sql_yd(self):
-        SQL_YD="select rq,xh as CTNNO,tdh as BILLNO,'' as MES_CONTENT from top_zl_yd_h WHERE  tdh='%s' and result_code='信息中心-入库成功'"%(self.billno)
+        SQL_YD="select rq,xh as CTNNO,tdh as BILLNO,'' as MES_CONTENT from top_zl_yd_h WHERE  tdh='%s' and result_code='信息中心-入库成功' and rq between dateadd(mi,-15,GETDATE())AND GETDATE()"%(self.billno)
         return SQL_YD
 
     # 海关放行
     def sql_hgfx_out(self):
-        SQL_HGFX="select top 1 srrq,tdh as BILLNO,'' as MES_CONTENT from zl_haig where tdh='%s' "%(self.billno)
+        SQL_HGFX="select top 1 srrq,tdh as BILLNO,'' as MES_CONTENT from zl_haig where tdh='%s' and srrq between dateadd(mi,-15,GETDATE())AND GETDATE()"%(self.billno)
         return SQL_HGFX
 
     # 船舶离港
     def sql_cblg(self):
-        SQL_CBLG="select DISTINCT CGD_BILLNO AS BILLNO,VLS_VCHNNM ||','|| VOC_EXPVOYAGE as MES_CONTENT from ALL_XIANGHUO_BAK_VW where  CGD_BILLNO='%s' and IYC_OUTYMODE='装船出场' and IYC_TYPE='出场箱'"%(self.billno)
+        SQL_CBLG="select DISTINCT CGD_BILLNO AS BILLNO,VLS_VCHNNM ||','|| VOC_EXPVOYAGE as MES_CONTENT from ALL_XIANGHUO_BAK_VW where  CGD_BILLNO='%s' and IYC_OUTYMODE='装船出场' and IYC_TYPE='出场箱' and iyc_outtm BETWEEN SYSDATE - interval '15' minute and SYSDATE"%(self.billno)
         return SQL_CBLG
 
     # 进口转关单已获取
@@ -76,25 +77,25 @@ class sql_mes():
         return SQL_ZGD_COUNT
 
     def sql_xcwg(self):
-        SQL_XCWG="select IYC_CNTRNO as CTNNO,CGD_BILLNO AS BILLNO from ALL_XIANGHUO_BAK_VW WHERE CGD_BILLNO='%s' and iyc_inymode='卸船进场' and iyc_type='在场箱' ORDER BY IYC_INYTM DESC"%self.billno
+        SQL_XCWG="select IYC_CNTRNO as CTNNO,CGD_BILLNO AS BILLNO from ALL_XIANGHUO_BAK_VW WHERE CGD_BILLNO='%s' and iyc_inymode='卸船进场' and iyc_type='在场箱' and IYC_INYTM>(SYSDATE - 15/(24*60)) ORDER BY IYC_INYTM DESC"%self.billno
         return SQL_XCWG
 
     # 进口核销完成
     def sql_jkhx(self):
-        SQL_JKHX="select distinct tdh as BILLNO,'' AS MES_CONTENT from zl_jkdh where tdh='%s' and zt='海关回执' "%(self.billno)
+        SQL_JKHX="select distinct tdh as BILLNO,'' AS MES_CONTENT from zl_jkdh where tdh='%s' and zt='海关回执'and jkrq BETWEEN dateadd(mi,-15,GETDATE()) AND GETDATE()"%(self.billno)
         return SQL_JKHX
 
     # 海关放行
     def sql_hgfx_in(self):
-        SQL_HGFX="select distinct tdh as BILLNO,'' as MES_CONTENT from zl_jkdh where tdh='%s'  and h_fx='ok'"%(self.billno)
+        SQL_HGFX="select distinct tdh as BILLNO,'' as MES_CONTENT from zl_jkdh where tdh='%s'  and h_fx='ok'and fxrq between dateadd(mi,-15,GETDATE())AND GETDATE()"%(self.billno)
         return SQL_HGFX
 
     # 提重计划
     def sql_tzjh(self):
-        SQL_TZJH="select DISTINCT ALL_PLAN_CONTAINERS_VM.PLANNO as MES_CONTENT , BILLNO from ALL_PLAN_CONTAINERS_VM WHERE billno='%s'  AND inymode='提进口重箱'"%(self.billno)
+        SQL_TZJH="select DISTINCT ALL_PLAN_CONTAINERS_VM.PLANNO as MES_CONTENT , BILLNO from ALL_PLAN_CONTAINERS_VM WHERE billno='%s'  AND inymode='提进口重箱' and to_Date(opsttm,'yyyy-mm-dd hh24:mi:ss')  >(SYSDATE - 15/(24*60))"%(self.billno)
         return  SQL_TZJH
 
     # 提箱出场
     def sql_txcc(self):
-        SQL_TXCC="select iyc_cntrno as CTNNO,CGD_BILLNO AS BILLNO ,'' AS MES_CONTENT from ALL_XIANGHUO_BAK_VW where  cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null"%(self.billno)
+        SQL_TXCC="select iyc_cntrno as CTNNO,CGD_BILLNO AS BILLNO ,'' AS MES_CONTENT from ALL_XIANGHUO_BAK_VW where  cgd_billno ='%s' and iyc_outymode='提进口重箱' and iyc_type='出场箱' and IYC_OUTTM is not null and IYC_OUTTM > (SYSDATE - 15/(24*60))"%(self.billno)
         return SQL_TXCC

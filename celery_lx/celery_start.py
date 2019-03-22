@@ -1,3 +1,5 @@
+from functools import wraps
+
 from setting import celeryconfig
 from celery import Celery
 from tasks import node_tasks
@@ -23,26 +25,41 @@ sql_con = con_sql()
 sql_cursor = cursor(sql_con)
 
 
-class CloseCon(Task):
-    _if_stop = [0, 0]
-
-    def on_succrss(self,retval,task_id,*args,**kwargs):
-        if self.if_stop == [1, 1]:
-            oracle_cursor.close()
-            oracle_con.close()
-            sql_cursor.close()
-            sql_con.close()
-            print('con close!')
-#             调用java后台模板消息接口。
-            get_wechat_java()
+# 定义判断变量
+_stop = 0
 
 
-@app.task(base = CloseCon)
+# def getWechat(func):
+#     @wraps(func)
+#     def fn():
+#         global _stop
+#         print(_stop)
+#
+#         oracle_con = con_oracle()
+#         oracle_cursor = cursor(oracle_con)
+#         sql_con = con_sql()
+#         sql_cursor = cursor(sql_con)
+#
+#         func()
+#         print(_stop)
+#         if _stop%1 != 0.5:
+#             oracle_cursor.close()
+#             oracle_con.close()
+#             sql_cursor.close()
+#             sql_con.close()
+#             print('con close!')
+#     #       调用java后台模板消息接口
+#             get_wechat_java()
+#     return fn
+
+
+@app.task()
+# @getWechat
 def start_out():
     # 获取open_id 和 订阅的提单号字典
     mes_sub_dict = message_sub_dict()
-    # # 开始运行时，把成功的参数回调为0
-    start_out._if_stop[0] = 0
+    # 开始运行时，把成功的参数回调为0
+    # global _stop
     # 订单号应该由订阅表中读取
     for v in mes_sub_dict:
         node_tasks.kxczk(v)
@@ -51,15 +68,17 @@ def start_out():
         node_tasks.yd(v)
         node_tasks.hgfx_out(v)
         node_tasks.cblg(v)
-    start_out._if_stop[0] = 1
+    # _stop += 0.5
+    get_wechat_java()
 
 
-@app.task(base = CloseCon)
+@app.task()
+# @getWechat
 def start_in():
     # 获取open_id 和 订阅的提单号字典
     mes_sub_dict = message_sub_dict()
     # # 开始运行时，把成功的参数回调为0
-    start_in._if_stop[1] = 0
+    # global _stop
     # 订单号应该由订阅表中读取
     for v in mes_sub_dict:
         node_tasks.jkzgd(v)
@@ -69,8 +88,6 @@ def start_in():
         node_tasks.hgfx_in(v)
         node_tasks.tzjh(v)
         node_tasks.txcc(v)
-    start_in._if_stop[1] = 1
+    # _stop += 0.5
+    # get_wechat_java()
 
-# start_in()
-# start_out()
-# get_wechat_java()

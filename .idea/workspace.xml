@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d52c1c1-a57b-4923-bd38-7899cbe8acf2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../db/oracle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/celery_lx/setting/celeryconfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../venv/logging/logging_test.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog/templates/blog/article_content.html" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/__init__.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/admin.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/apps.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/migrations/__init__.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/models.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/templates/blog2/firsthtml.html" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/tests.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/urls.py" afterDir="false" />
-      <change afterPath="E:/pythonDjango/myfirstdjango/blog2/views.py" afterDir="false" />
+      <change afterPath="E:/Python练习/db/oracle.py" afterDir="false" />
+      <change afterPath="E:/Python练习/jj_lunxun/celery_lx/setting/celeryconfig.py" afterDir="false" />
+      <change afterPath="E:/Python练习/jj_lunxun/celery_lx/setting/sqlconfig.py" afterDir="false" />
+      <change afterPath="E:/Python练习/venv/logging/logging_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/celery_lx/celery_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_lx/celery_start.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/celery_lx/setting/sqlconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_lx/setting/sqlconfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celery_lx/tasks/insert_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_lx/tasks/insert_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celery_lx/tasks/get_wechat.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_lx/tasks/get_wechat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py" afterDir="false" />
       <change beforePath="E:/微信小程序学习/cn-wechat-weather" beforeDir="false" afterPath="E:/微信小程序学习/cn-wechat-weather" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,9 +20,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/jj_lunxun$celery_start.coverage" NAME="celery_start Coverage Results" MODIFIED="1544340555625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/celery_lx" />
+    <SUITE FILE_PATH="coverage/jj_lunxun$celery_start.coverage" NAME="celery_start Coverage Results" MODIFIED="1552638135811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/celery_lx" />
     <SUITE FILE_PATH="coverage/jj_lunxun$db_connect.coverage" NAME="db_connect Coverage Results" MODIFIED="1541578885152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/celery_lx/tasks" />
-    <SUITE FILE_PATH="coverage/jj_lunxun$insert_message.coverage" NAME="insert_message Coverage Results" MODIFIED="1541582045018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/celery_lx/tasks" />
+    <SUITE FILE_PATH="coverage/jj_lunxun$insert_message.coverage" NAME="insert_message Coverage Results" MODIFIED="1552638472104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/celery_lx/tasks" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.96.100" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-363600560">
@@ -78,18 +89,77 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-165324242">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.39" value="2" />
+          <entry key="project.open.time.40" value="2" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="17" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1013" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1013" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="COMPANY" value="1" />
+          <entry key="py" value="10" />
+          <entry key="sql" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="1" />
+          <entry key="Python" value="10" />
+          <entry key="Scratch" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/celery_lx/celery_start.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="85" column="23" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+                <marker date="1553068375452" expanded="true" signature="775:776" ph="..." />
+                <marker date="1553068375452" expanded="true" signature="775:1348" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/celery_lx/tasks/_init_.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/celery_lx/tasks/db_connect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <marker date="1542012334984" expanded="true" signature="439:440" ph="..." />
-              </folding>
+            <state relative-caret-position="650">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -97,68 +167,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/celery_lx/setting/sqlconfig.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding>
-                <marker date="1544773301852" expanded="true" signature="453:592" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="1041:1098" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="1098:1099" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="1135:1136" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="1413:1689" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="2044:2161" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="2192:2362" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="2400:2538" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="2572:2807" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="3067:3068" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="3322:3540" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="3576:3726" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="3763:3913" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="3947:4144" ph="..." />
-                <marker date="1544773301852" expanded="true" signature="4178:4187" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/celery_lx/celery_start.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1544454105405" expanded="true" signature="747:1080" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" selection-start-column="11" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://E:/Python/Lib/site-packages/requests/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/celery_lx/tasks/get_wechat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1550">
-              <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-              <folding>
-                <marker date="1542011937430" expanded="true" signature="1776:1781" ph="..." />
-              </folding>
+            <state relative-caret-position="1975">
+              <caret line="79" column="154" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="154" />
             </state>
           </provider>
         </entry>
@@ -166,8 +176,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/celery_lx/tasks/node_tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
-              <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+            <state relative-caret-position="3625">
+              <caret line="149" column="25" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/celery_lx/tasks/get_wechat.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -175,8 +197,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/celery_lx/tasks/insert_message.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2625">
-              <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+            <state relative-caret-position="3150">
+              <caret line="132" column="51" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
                 <marker date="1544509085996" expanded="true" signature="1914:1915" ph="..." />
@@ -188,10 +210,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/celery_lx/setting/celeryconfig.py">
+        <entry file="file://$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="450">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -208,6 +230,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>psprd</find>
+      <find>BASE</find>
+      <find>on_fa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -225,14 +249,14 @@
         <option value="$PROJECT_DIR$/celery_lx/tasks/_init_.py" />
         <option value="$PROJECT_DIR$/celery_lx/tasks/ctn_out_tasks.py" />
         <option value="E:/Python/Lib/sitecustomize.py" />
-        <option value="$PROJECT_DIR$/celery_lx/tasks/get_wechat.py" />
         <option value="$PROJECT_DIR$/celery_lx/tasks/node_tasks.py" />
         <option value="$PROJECT_DIR$/celery_lx/tasks/db_connect.py" />
         <option value="$PROJECT_DIR$/celery_lx/setting/celeryconfig.py" />
-        <option value="$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py" />
-        <option value="$PROJECT_DIR$/celery_lx/celery_start.py" />
         <option value="$PROJECT_DIR$/celery_lx/tasks/insert_message.py" />
+        <option value="$PROJECT_DIR$/celery_lx/tasks/get_wechat.py" />
         <option value="$PROJECT_DIR$/celery_lx/setting/sqlconfig.py" />
+        <option value="$PROJECT_DIR$/celery_lx/celery_start.py" />
+        <option value="$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py" />
       </list>
     </option>
   </component>
@@ -248,11 +272,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="716" />
-    <option name="y" value="78" />
-    <option name="width" value="3860" />
-    <option name="height" value="1100" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="3" />
+    <option name="y" value="39" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -306,7 +330,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="SearchEverywhereHistoryKey" value="insert&#9;RUN_CONFIGURATION&#9;insert_message" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../venv" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -329,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.celery_start">
+  <component name="RunManager" selected="Python.insert_message">
     <configuration name="celery_start" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="jj_lunxun" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,8 +430,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.celery_start" />
         <item itemvalue="Python.insert_message" />
+        <item itemvalue="Python.celery_start" />
         <item itemvalue="Python.db_connect" />
       </list>
     </recent_temporary>
@@ -432,30 +459,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12153518" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14498934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298647" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298647" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39958376" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39958376" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298647" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32882413" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32778355" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3298647" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3298647" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.21375267" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11353944" />
@@ -491,14 +519,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/celery_lx/tasks/node_tasks.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/celery_lx/tasks/get_wechat.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/celery_lx/celery_start.py</url>
-          <line>52</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/celery_lx/tasks/insert_message.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/celery_lx/tasks/insert_message.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/celery_lx/tasks/insert_message.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -508,11 +546,35 @@
         <watch expression="message_sub[row[&quot;BILLNO&quot;]]" />
         <watch expression="zgd_count[0]['NUM']" language="Python" />
         <watch expression="len(rows)" language="Python" />
+        <watch expression="oracle_cursor" language="Python" />
+        <watch expression="dict(zip(columns,row))" language="Python" />
+        <watch expression="cursor.fetchall()" language="Python" />
+        <watch expression="wechat_messsage_sub" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>cursor.fetchall()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict(zip(columns,row))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dict(zio(columns,row))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>oracle_cursor</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>len(rows)</expression-string>
         <language-id>Python</language-id>
@@ -543,26 +605,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>str(row[])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>str(list(vm_id[0]))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>list(vm_id[0])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>vm_id[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="setValue">
       <expression>
@@ -574,12 +616,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/celery_lx/config/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/celery_lx/setting/_init_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/_init_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://E:/Python/Lib/sitecustomize.py" />
     <entry file="file://E:/Python/Lib/site.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -609,13 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="661" selection-start-line="661" selection-end-line="661" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Python/Lib/site-packages/celery/app/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
         </state>
       </provider>
     </entry>
@@ -654,42 +683,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Python/Lib/site-packages/celery/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/db_connect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <marker date="1542012334984" expanded="true" signature="439:440" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/celery_start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1544454105405" expanded="true" signature="747:1080" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://1e208d1b-c243-4cd6-a7e7-849bd77e41ff/schema/SHDSJ/table/COMPANY" />
     <entry file="file://E:/Python/Lib/site-packages/requests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -697,27 +691,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/get_wechat.py">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1e208d1b-c243-4cd6-a7e7-849bd77e41ff/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/Python/Lib/site-packages/celery/local.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1550">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
-          <folding>
-            <marker date="1542011937430" expanded="true" signature="1776:1781" ph="..." />
-          </folding>
+        <state relative-caret-position="183">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/setting/celeryconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/setting/_init_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/Python/Lib/site-packages/celery/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python/Lib/site-packages/celery/app/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3343">
+          <caret line="387" column="11" lean-forward="true" selection-start-line="387" selection-start-column="11" selection-end-line="387" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/_init_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/db_connect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/celery_lx/tasks/node_tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="91" column="6" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+        <state relative-caret-position="3625">
+          <caret line="149" column="25" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/get_wechat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/celery_lx/tasks/insert_message.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="111" column="24" selection-start-line="111" selection-start-column="24" selection-end-line="111" selection-end-column="24" />
+        <state relative-caret-position="3150">
+          <caret line="132" column="51" selection-start-line="132" selection-start-column="51" selection-end-line="132" selection-end-column="51" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
             <marker date="1544509085996" expanded="true" signature="1914:1915" ph="..." />
@@ -727,34 +765,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/celery_lx/setting/celeryconfig.py">
+    <entry file="file://$PROJECT_DIR$/celery_lx/tasks/wechat_java_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="450">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celery_lx/celery_start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="85" column="23" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+            <marker date="1553068375452" expanded="true" signature="775:776" ph="..." />
+            <marker date="1553068375452" expanded="true" signature="775:1348" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/celery_lx/setting/sqlconfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <marker date="1544773301852" expanded="true" signature="453:592" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="1041:1098" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="1098:1099" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="1135:1136" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="1413:1689" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="2044:2161" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="2192:2362" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="2400:2538" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="2572:2807" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="3067:3068" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="3322:3540" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="3576:3726" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="3763:3913" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="3947:4144" ph="..." />
-            <marker date="1544773301852" expanded="true" signature="4178:4187" ph="..." />
-          </folding>
+        <state relative-caret-position="1975">
+          <caret line="79" column="154" lean-forward="true" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="154" />
         </state>
       </provider>
     </entry>
